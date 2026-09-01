@@ -9,7 +9,7 @@ public:
                 {
                 res.push_back(i);
                 res.push_back(j);
-            
+                return res;
                 }
             }
         }
