@@ -6,13 +6,18 @@ public:
         int j=n-1;
         while(i<j)
         {
-            int peak=i+(j-i) /2;
-            if(arr[peak]<arr[peak+1])
-            {
-                i=peak+1;
-            }
-            else
-                j=peak;
+         if(arr[i]<arr[i+1])
+         {
+            i++;
+         }
+         if(arr[j]<arr[j-1])
+         {
+            j--;
+         }
+         if(i==j)
+         {
+            return i;
+         } 
         
         }return i;
         
