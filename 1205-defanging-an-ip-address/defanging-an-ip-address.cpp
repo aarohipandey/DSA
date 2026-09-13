@@ -1,7 +1,7 @@
 class Solution {
 public:
     string defangIPaddr(string address) {
-        string result="";
+        string result;
         for(char s:address)
         {
             if(s=='.')
