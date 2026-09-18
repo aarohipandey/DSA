@@ -1,12 +1,19 @@
+#include <vector>
+#include <unordered_set>
+
 class Solution {
 public:
-    bool containsDuplicate(vector<int>& nums) {sort(nums.begin(),nums.end());
-    for(int i=0;i<nums.size()-1;i++)
-    {
-        if(nums[i]==nums[i+1]){
-            return true;
+    bool containsDuplicate(std::vector<int>& nums) {
+        std::unordered_set<int> seen;
+        for (int num : nums) {
+            // If the number is already in the set, we found a duplicate
+            if (seen.find(num) != seen.end()) {
+                return true;
+            }
+            // Otherwise, add the number to the set
+            seen.insert(num);
         }
-    }return false;
-        
+        // No duplicates found
+        return false;
     }
 };
