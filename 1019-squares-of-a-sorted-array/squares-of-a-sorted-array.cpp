@@ -8,20 +8,17 @@ public:
         int k=n-1;
         while(i<=j)
         {
-            int left=nums[i]*nums[i];
-            int right=nums[j]*nums[j];
-        if(left>right)
-        {
-            res[k]=left;
-            i++;
-        }
-        else
-        {
-        res[k]=right;
-        j--;
-        }
-        k--;
-        }
+            if(abs(nums[i])<abs(nums[j]))
+            {
+                res[k]=nums[j]*nums[j];
+                j--;
+            }
+            else
+            {
+                res[k]=nums[i]*nums[i];
+                i++;
+            }
+            k--; }
     return res;
-    }
+    } 
 };
