@@ -6,5 +6,5 @@
 
 
 select * from cinema where
-id%2!=0 AND description!='boring'
+id%2=1 AND description!='boring'
 order by rating desc;
