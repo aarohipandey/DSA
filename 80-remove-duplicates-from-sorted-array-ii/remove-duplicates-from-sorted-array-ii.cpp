@@ -1,20 +1,17 @@
 class Solution {
     public:
     int removeDuplicates(vector<int>&nums) {
-        int c=0;
-        unordered_map<int,int>freqmp;
+        int k=0;
+    
         for(int i:nums)  
         {
-            if(freqmp[i]<2)
-            {
-                nums[c]=i;
-                c++;
-        
-            freqmp[i]++;
-        }
+            if (k < 2 || i > nums[k - 2]) {
+                nums[k] = i;
+                k++;
+            }
         }
         
-        return c;
+        return k;
         
     }
 };
